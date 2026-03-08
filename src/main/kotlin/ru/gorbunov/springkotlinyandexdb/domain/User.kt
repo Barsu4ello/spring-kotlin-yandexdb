@@ -22,4 +22,7 @@ class User(
         inverseJoinColumns = [JoinColumn("role_id")]
     )
     val roles: MutableSet<Role>
-)
+
+){
+     fun copy(user: User): User = User(null, user.name, user.roles.toMutableSet())
+}
