@@ -1,0 +1,18 @@
+spring:
+
+  datasource:
+    driver-class-name: tech.ydb.jdbc.YdbDriver
+    url: jdbc:ydb:grpc://localhost:2136/local
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: tech.ydb.hibernate.dialect.YdbDialect
+        jdbc:
+          batch_size: 50
+        order_inserts: true
+        order_updates: true
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
